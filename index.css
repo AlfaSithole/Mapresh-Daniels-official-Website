@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Baloo 2", cursive;
+  
+  --color-brand-pink: #ff1493;
+  --color-brand-light-pink: #ffe6f0;
+  --color-brand-soft-pink: #fff0f6;
+  --color-brand-hover-pink: #ff69b4;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-gray-800 bg-white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply font-display bg-brand-pink text-white px-8 py-3 rounded-full text-xl shadow-lg hover:bg-brand-hover-pink hover:scale-105 transition-all cursor-pointer;
+  }
+  
+  .card-cartoon {
+    @apply bg-brand-soft-pink p-6 rounded-[2.5rem] shadow-xl hover:scale-105 hover:bg-brand-light-pink transition-all;
+  }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
